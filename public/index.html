@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Surya Wedding - Paket Pernikahan & Khitanan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8e6e0 0%, #f2f0f7 100%);
+            color: #3b2f2f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: #ac7c5f;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            color: #fff;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 0.25rem 0 0 0;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+
+        nav {
+            width: 100%;
+            background-color: #7f5a3a;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #ac7c5f;
+            color: #fff;
+        }
+
+        main {
+            max-width: 960px;
+            width: 90%;
+            padding: 2rem 0 4rem;
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(172, 124, 95, 0.3);
+            display: none;
+
+        }
+
+        #home-section {
+            display: block;
+        }
+
+
+        h2.section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: #ac7c5f;
+            border-bottom: 2px solid #ac7c5f;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+
+        .package-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .package-card {
+            background: #fef9f4;
+            border: 2px solid #ac7c5f;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 0 8px rgba(172, 124, 95, 0.2);
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .package-card:hover {
+            box-shadow: 0 0 18px rgba(172, 124, 95, 0.5);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #7f5a3a;
+        }
+
+        .package-details {
+            font-size: 1rem;
+            color: #4b3a2a;
+            margin-bottom: 0.3rem;
+        }
+
+        form {
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        form .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #6b4c31;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem 0.7rem;
+            font-size: 1rem;
+            border: 2px solid #ac7c5f;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        input[type="tel"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #7f5a3a;
+            outline: none;
+        }
+
+        button {
+            background-color: #ac7c5f;
+            color: #fff;
+            padding: 0.7rem 1.4rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #7f5a3a;
+        }
+
+        .booking-list {
+            max-width: 820px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .booking-list th,
+        .booking-list td {
+            border: 1px solid #ac7c5f;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            vertical-align: middle;
+
+        }
+
+        .booking-list th:last-child,
+        .booking-list td:last-child {
+            text-align: center;
+  
+        }
+
+        .booking-list thead {
+            background-color: #ac7c5f;
+            color: #fff;
+        }
+
+        .booking-list tbody tr:nth-child(even) {
+            background-color: #f9f0e6;
+        }
+
+        .income-display {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #e6f7e9;
+
+            border: 1px solid #6b9c6d;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3b5a3d;
+        }
+
+        .confirm-payment-button {
+            background-color: #4CAF50;
+
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto;
+
+            font-size: 0.9rem;
+        }
+
+        .confirm-payment-button:hover {
+            background-color: #45a049;
+        }
+
+        .paid-status {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+
+        .unpaid-status {
+            color: #f44336;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 1rem;
+            background-color: #ac7c5f;
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li a {
+                padding: 0.8rem 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .booking-list,
+            .booking-list thead,
+            .booking-list tbody,
+            .booking-list th,
+            .booking-list td,
+            .booking-list tr {
+                display: block;
+            }
+
+            .booking-list thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .booking-list tr {
+                margin-bottom: 0.625em;
+                border: 1px solid #ac7c5f;
+                border-radius: 8px;
+                background-color: #fff;
+            }
+
+            .booking-list td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+
+            .booking-list td:before {
+                position: absolute;
+                top: 0;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600;
+                color: #7f5a3a;
+            }
+
+            .booking-list td:nth-of-type(1):before {
+                content: "#";
+            }
+
+            .booking-list td:nth-of-type(2):before {
+                content: "Nama Pemesan";
+            }
+
+            .booking-list td:nth-of-type(3):before {
+                content: "Paket";
+            }
+
+            .booking-list td:nth-of-type(4):before {
+                content: "Ukuran Tenda";
+            }
+
+            .booking-list td:nth-of-type(5):before {
+                content: "Lokasi";
+            }
+
+            .booking-list td:nth-of-type(6):before {
+                content: "Tanggal";
+            }
+
+            .booking-list td:nth-of-type(7):before {
+                content: "Nomor Telepon";
+            }
+
+            .booking-list td:nth-of-type(8):before {
+                content: "Pembayaran Melalui";
+            }
+
+            .booking-list td:nth-of-type(9):before {
+                content: "Status Pembayaran";
+            }
+
+            .booking-list td:nth-of-type(10):before {
+                content: "Aksi";
+            }
+
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .package-list {
+                grid-template-columns: 1fr;
+            }
+
+            .package-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Surya Wedding</h1>
+        <p>Paket Pernikahan & Khitanan</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home-section" class="nav-link active">Beranda</a></li>
+            <li><a href="#packages-section" class="nav-link">Daftar Paket</a></li>
+            <li><a href="#booking-section" class="nav-link">Pesan Paket</a></li>
+            <li><a href="#contact-section" class="nav-link">Hubungi Kami</a></li>
+            <li><a href="#payment-section" class="nav-link">Pembayaran</a></li>
+            <li id="admin-login-nav-item"><a href="#admin-login-section" class="nav-link">Admin Login</a></li>
+            <li id="admin-dashboard-nav-item" style="display:none;"><a href="#admin-dashboard" class="nav-link">Dashboard Admin</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home-section">
+            <h2 class="section-title">Selamat Datang di Surya Wedding</h2>
+            <p>Kami menyediakan berbagai paket pernikahan dan khitanan yang dapat disesuaikan dengan kebutuhan Anda. Dengan pengalaman dan profesionalisme, kami siap membantu mewujudkan acara impian Anda.</p>
+            <p>Jelajahi daftar paket kami dan jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau ingin melakukan pemesanan.</p>
+            <p>Nikmati kemudahan merencanakan momen spesial Anda bersama Surya Wedding!</p>
+        </section>
+
+        <section id="packages-section">
+            <h2 class="section-title">Daftar Paket</h2>
+            <div class="package-list" id="package-list"></div>
+        </section>
+
+        <section id="booking-section">
+            <h2 class="section-title">Form Pemesanan Paket</h2>
+            <form id="booking-form" aria-label="Form pemesanan paket">
+                <div class="form-group">
+                    <label for="customerName">Nama Pemesan</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Masukkan nama Anda" />
+                </div>
+                <div class="form-group">
+                    <label for="packageSelect">Pilih Paket</label>
+                    <select id="packageSelect" name="packageId" required>
+                        <option value="" disabled selected>Pilih paket</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tentSize">Ukuran Tenda</label>
+                    <input type="text" id="tentSize" name="tentSize" required placeholder="Contoh: 10m x 15m" />
+                </div>
+                <div class="form-group">
+                    <label for="location">Lokasi Acara</label>
+                    <input type="text" id="location" name="location" required placeholder="Contoh: Jakarta Selatan" />
+                </div>
+                <div class="form-group">
+                    <label for="date">Tanggal Acara</label>
+                    <input type="date" id="date" name="date" required min="" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Contoh: 081234567890" pattern="[0-9]{9,15}" />
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Pembayaran Melalui</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="" disabled selected>Pilih metode pembayaran</option>
+                        <option value="Transfer Bank">Transfer Bank</option>
+                        <option value="OVO">OVO</option>
+                        <option value="GoPay">GoPay</option>
+                        <option value="DANA">DANA</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+                <button type="submit">Pesan Paket</button>
+            </form>
+            <div id="booking-message" role="alert" aria-live="polite" style="margin-top:1rem; font-weight:bold;"></div>
+            <p style="margin-top: 1rem;">Kirim bukti pembayaran melalui WhatsApp ke nomor yang tertera: <strong>0813-1361-9268</strong></p>
+        </section>
+
+        <section id="contact-section">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-info">
+                <p><strong>Nomor WhatsApp:</strong> 0813-1361-9268</p>
+                <p><strong>Email:</strong> SuryaWedding@gmail.com</p>
+                <p><strong>Alamat:</strong> Jl. Raya Salembaran, RT 03/003 Gg. Senjok No.3 Ds. Salembaran Jaya, Kec. Kosambi, Kabupaten Tangerang, Banten</p>
+            </div>
+        </section>
+
+        <section id="payment-section">
+            <h2 class="section-title">Pembayaran Melalui</h2>
+            <div class="payment-info">
+                <p>1. Transfer Bank: <strong>Bank Jago An Aditiya Surya Putra : 106043595689</strong></p>
+                <p>2. OVO, GoPay, DANA An Aditiya Surya Putra : <strong>081313619268</strong></p>
+                <p>3. Cash</p>
+            </div>
+        </section>
+
+        <section id="admin-login-section">
+            <h2 class="section-title">Login Admin</h2>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="adminPassword">Password Admin</label>
+                    <input type="password" id="adminPassword" name="adminPassword" required placeholder="Masukkan password admin" />
+                </div>
+                <button type="submit">Login Admin</button>
+            </form>
+            <div id="admin-login-message" role="alert" aria-live="polite" style="margin-top:1rem; font-weight:bold;"></div>
+        </section>
+
+        <section id="admin-dashboard">
+            <h2 class="section-title">Dashboard Admin</h2>
+            <table class="booking-list" id="booking-list" aria-label="Daftar pemesanan paket">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nama Pemesan</th>
+                        <th>Paket</th>
+                        <th>Ukuran Tenda</th>
+                        <th>Lokasi</th>
+                        <th>Tanggal</th>
+                        <th>Nomor Telepon</th>
+                        <th>Pembayaran Melalui</th>
+                        <th>Status Pembayaran</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button id="logout-admin" style="margin-top: 1.5rem;">Logout Admin</button>
+            <div class="income-display" id="total-income" style="margin-top: 1.5rem;">
+                Total Pendapatan (Lunas): Rp. 0
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Surya Wedding. All rights reserved.
+    </footer>
+
+    <script>
+        const packages = [{
+                id: 1,
+                name: 'Paket Pernikahan',
+                price: 18000000,
+                category: 'Pernikahan',
+                imageUrl: 'file:///C:/Users/user/Pictures/tenda%20pernikahan%20&%20khitanan/Paket%20Tenda%20Pernikahan%2018Jt.jpeg',
+            },
+            {
+                id: 2,
+                name: 'Paket Pernikahan',
+                price: 28000000,
+                category: 'Pernikahan',
+                imageUrl: 'file:///C:/Users/user/Pictures/tenda%20pernikahan%20&%20khitanan/Paket%20Tenda%20Pernikahan%2028Jt.jpeg',
+            },
+            {
+                id: 3,
+                name: 'Paket Pernikahan',
+                price: 40000000,
+                category: 'Pernikahan',
+                imageUrl: 'file:///C:/Users/user/Pictures/tenda%20pernikahan%20&%20khitanan/Paket%20Tenda%20Pernikahan%2040Jt.jpeg',
+            },
+            {
+                id: 4,
+                name: 'Paket Khitanan',
+                price: 10000000,
+                category: 'Khitanan',
+                imageUrl: 'file:///C:/Users/user/Pictures/tenda%20pernikahan%20&%20khitanan/Paket%20Tenda%20Khitanan%2010Jt.jpeg',
+            },
+            {
+                id: 5,
+                name: 'Paket Dokumentasi',
+                price: 3000000,
+                category: 'Dokumentasi',
+                imageUrl: 'file:///C:/Users/user/Pictures/tenda%20pernikahan%20&%20khitanan/Paket%20Dokumentasi%20Pernikahan%203Jt.jpeg',
+            },
+        ];
+
+        const ADMIN_PASSWORD = 'adit2587'; 
+        function formatCurrency(amount) {
+            return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        function renderPackageList() {
+            const container = document.getElementById('package-list');
+            container.innerHTML = '';
+            packages.forEach(pkg => {
+                const card = document.createElement('div');
+                card.classList.add('package-card');
+                card.innerHTML = `
+                    <img src="${pkg.imageUrl}" alt="Gambar ${pkg.name}" class="package-image">
+                    <div class="package-name">${pkg.name}</div>
+                    <div class="package-details"><strong>Harga:</strong> Rp. ${formatCurrency(pkg.price)}</div>
+                    <div class="package-details"><strong>Kategori:</strong> ${pkg.category}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function populatePackageSelect() {
+            const select = document.getElementById('packageSelect');
+
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            packages.forEach(pkg => {
+                const option = document.createElement('option');
+                option.value = pkg.id;
+                option.textContent = `${pkg.name} - Rp. ${formatCurrency(pkg.price)}`;
+                select.appendChild(option);
+            });
+        }
+
+        const BOOKING_STORAGE_KEY = 'suryaWeddingPackageBookings';
+        const ADMIN_LOGIN_STATUS_KEY = 'suryaWeddingAdminLoggedIn';
+
+        function getBookings() {
+            try {
+                const data = localStorage.getItem(BOOKING_STORAGE_KEY);
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                console.error("Error parsing bookings from localStorage:", e);
+                return [];
+            }
+        }
+
+        function saveBookings(bookings) {
+            try {
+                localStorage.setItem(BOOKING_STORAGE_KEY, JSON.stringify(bookings));
+            } catch (e) {
+                console.error("Error saving bookings to localStorage:", e);
+            }
+        }
+
+        function calculateTotalPaidIncome() {
+            const bookings = getBookings();
+            return bookings.reduce((total, booking) => {
+                return total + (booking.isPaid ? booking.packagePrice : 0);
+            }, 0);
+        }
+
+        function renderBookingList() {
+            const bookings = getBookings();
+            const tbody = document.querySelector('#booking-list tbody');
+            const totalIncomeDiv = document.getElementById('total-income');
+            tbody.innerHTML = '';
+
+            const totalPaidIncome = calculateTotalPaidIncome();
+            totalIncomeDiv.textContent = `Total Pendapatan (Lunas): Rp. ${formatCurrency(totalPaidIncome)}`;
+
+            if (bookings.length === 0) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td colspan="10" style="text-align:center; font-style: italic;">Belum ada pemesanan paket.</td>`;
+                tbody.appendChild(tr);
+                return;
+            }
+
+            bookings.forEach((booking, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${booking.customerName}</td>
+                    <td>${booking.packageName} (Rp. ${formatCurrency(booking.packagePrice)})</td>
+                    <td>${booking.tentSize}</td>
+                    <td>${booking.location}</td>
+                    <td>${booking.date}</td>
+                    <td>${booking.phone}</td>
+                    <td>${booking.paymentMethod}</td>
+                    <td class="${booking.isPaid ? 'paid-status' : 'unpaid-status'}">${booking.isPaid ? 'Lunas' : 'Belum Lunas'}</td>
+                    <td>
+                        <button class="confirm-payment-button" data-index="${index}">
+                            ${booking.isPaid ? 'Batalkan Konfirmasi' : 'Konfirmasi Pembayaran'}
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function togglePaymentStatus(index) {
+            const bookings = getBookings();
+            if (index >= 0 && index < bookings.length) {
+                bookings[index].isPaid = !bookings[index].isPaid;
+                saveBookings(bookings);
+                renderBookingList(); 
+            }
+        }
+
+        function validateBooking(data) {
+            if (!data.customerName.trim()) return 'Nama pemesan wajib diisi.';
+            if (!data.packageId) return 'Pilih paket.';
+            if (!data.tentSize.trim()) return 'Ukuran tenda wajib diisi.';
+            if (!data.location.trim()) return 'Lokasi acara wajib diisi.';
+            if (!data.date) return 'Tanggal acara wajib diisi.';
+            if (!data.phone.trim()) return 'Nomor telepon wajib diisi.';
+            if (!/^[0-9]{9,15}$/.test(data.phone)) return 'Nomor telepon tidak valid. Hanya angka, panjang 9-15 digit.';
+            if (!data.paymentMethod) return 'Pilih metode pembayaran.';
+            return null;
+        }
+
+        function isPackageBooked(packageId, date) {
+            const bookings = getBookings();
+        
+            return bookings.some(b => b.packageId === packageId && b.date === date);
+        }
+
+        function addBooking(data) {
+            const bookings = getBookings();
+            bookings.push(data);
+            saveBookings(bookings);
+        }
+
+        function setDateMin() {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('main section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.querySelector(`[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        function checkAdminLoginStatus() {
+            const isLoggedIn = localStorage.getItem(ADMIN_LOGIN_STATUS_KEY) === 'true';
+            const adminLoginNavItem = document.getElementById('admin-login-nav-item');
+            const adminDashboardNavItem = document.getElementById('admin-dashboard-nav-item');
+
+            if (isLoggedIn) {
+                adminLoginNavItem.style.display = 'none';
+                adminDashboardNavItem.style.display = 'list-item';
+                if (window.location.hash === '#admin-dashboard') {
+                    showSection('admin-dashboard');
+                    renderBookingList();
+                }
+            } else {
+                adminLoginNavItem.style.display = 'list-item';
+                adminDashboardNavItem.style.display = 'none';
+                if (window.location.hash === '#admin-dashboard') {
+                    showSection('admin-login-section');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPackageList();
+            populatePackageSelect();
+            setDateMin();
+
+            checkAdminLoginStatus();
+
+            if (!window.location.hash || window.location.hash === '#') {
+                showSection('home-section');
+            } else {
+                const initialSectionId = window.location.hash.substring(1);
+                if (initialSectionId === 'admin-dashboard' && localStorage.getItem(ADMIN_LOGIN_STATUS_KEY) !== 'true') {
+                    showSection('admin-login-section');
+                } else {
+                    showSection(initialSectionId);
+                }
+            }
+
+            const form = document.getElementById('booking-form');
+            const messageDiv = document.getElementById('booking-message');
+            const adminLoginForm = document.getElementById('admin-login-form');
+            const adminLoginMessageDiv = document.getElementById('admin-login-message');
+            const logoutAdminButton = document.getElementById('logout-admin');
+            const bookingListTableBody = document.querySelector('#booking-list tbody');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const sectionId = this.getAttribute('href').substring(1);
+
+                    if (sectionId === 'admin-dashboard') {
+                        const isLoggedIn = localStorage.getItem(ADMIN_LOGIN_STATUS_KEY) === 'true';
+                        if (!isLoggedIn) {
+                            showSection('admin-login-section');
+                        } else {
+                            showSection(sectionId);
+                            renderBookingList();
+                        }
+                    } else if (sectionId === 'admin-login-section') {
+                        const isLoggedIn = localStorage.getItem(ADMIN_LOGIN_STATUS_KEY) === 'true';
+                        if (isLoggedIn) {
+                            showSection('admin-dashboard');
+                            renderBookingList();
+                        } else {
+                            showSection(sectionId);
+                        }
+                    } else {
+                        showSection(sectionId);
+                    }
+                    window.history.pushState(null, '', this.getAttribute('href'));
+                });
+            });
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                messageDiv.textContent = '';
+                messageDiv.style.color = '';
+
+                const formData = new FormData(form);
+                const customerName = formData.get('customerName').trim();
+                const packageId = Number(formData.get('packageId'));
+                const tentSize = formData.get('tentSize').trim();
+                const location = formData.get('location').trim();
+                const date = formData.get('date');
+                const phone = formData.get('phone').trim();
+                const paymentMethod = formData.get('paymentMethod');
+
+                const validationError = validateBooking({
+                    customerName,
+                    packageId,
+                    tentSize,
+                    location,
+                    date,
+                    phone,
+                    paymentMethod
+                });
+                if (validationError) {
+                    messageDiv.textContent = validationError;
+                    messageDiv.style.color = 'red';
+                    return;
+                }
+
+                if (isPackageBooked(packageId, date)) {
+                    messageDiv.textContent = 'Maaf, paket sudah dipesan untuk tanggal tersebut. Silakan pilih tanggal lain.';
+                    messageDiv.style.color = 'red';
+                    return;
+                }
+
+                const pkg = packages.find(p => p.id === packageId);
+                if (!pkg) {
+                    messageDiv.textContent = 'Paket yang dipilih tidak valid.';
+                    messageDiv.style.color = 'red';
+                    return;
+                }
+
+                addBooking({
+                    customerName,
+                    packageId,
+                    packageName: pkg.name,
+                    packagePrice: pkg.price,
+                    tentSize,
+                    location,
+                    date,
+                    phone,
+                    paymentMethod,
+                    isPaid: false
+                });
+
+                messageDiv.textContent = 'Pemesanan paket berhasil dibuat. Terima kasih!';
+                messageDiv.style.color = 'green';
+
+                form.reset();
+                form.querySelector('#packageSelect').value = '';
+
+                if (localStorage.getItem(ADMIN_LOGIN_STATUS_KEY) === 'true' && document.getElementById('admin-dashboard').style.display === 'block') {
+                    renderBookingList();
+                }
+            });
+
+            adminLoginForm.addEventListener('submit', event => {
+                event.preventDefault();
+                adminLoginMessageDiv.textContent = '';
+                adminLoginMessageDiv.style.color = '';
+
+                const password = document.getElementById('adminPassword').value;
+                if (password === ADMIN_PASSWORD) {
+                    localStorage.setItem(ADMIN_LOGIN_STATUS_KEY, 'true');
+                    adminLoginMessageDiv.textContent = 'Login berhasil! Mengarahkan ke dashboard admin.';
+                    adminLoginMessageDiv.style.color = 'green';
+                    setTimeout(() => {
+                        showSection('admin-dashboard');
+                        renderBookingList();
+                        window.history.pushState(null, '', '#admin-dashboard');
+                    }, 1000);
+                } else {
+                    adminLoginMessageDiv.textContent = 'Password salah. Silakan coba lagi.';
+                    adminLoginMessageDiv.style.color = 'red';
+                }
+            });
+            logoutAdminButton.addEventListener('click', () => {
+                localStorage.removeItem(ADMIN_LOGIN_STATUS_KEY);
+                checkAdminLoginStatus();
+                showSection('home-section');
+                window.history.pushState(null, '', '#home-section');
+            });
+            bookingListTableBody.addEventListener('click', (event) => {
+                if (event.target.classList.contains('confirm-payment-button')) {
+                    const index = parseInt(event.target.dataset.index);
+                    togglePaymentStatus(index);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
